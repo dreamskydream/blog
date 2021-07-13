@@ -9,7 +9,7 @@
 <div id="text" style="width: 100%;">
     <div id="editor" style="height: 100%;">
         <!-- Tips: Editor.md can auto append a `<textarea>` tag -->
-        <textarea style="display:none;" placeholder="欢迎使用"></textarea>
+        <textarea style="display:none;"></textarea>
     </div>
 </div>
 
@@ -28,6 +28,7 @@
             // width: "100%",
             height: h,
             saveHTMLToTextarea   : true,
+            placeholder: "欢迎使用Markdown在线编辑器！",
             // markdown: "xxxx",     // dynamic set Markdown text
             path : "editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
         });
