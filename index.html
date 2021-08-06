@@ -12,9 +12,7 @@
         <textarea style="display:none;"></textarea>
     </div>
 </div>
-<div id="test-editormd-view">
-	<textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>               
-</div>
+<button id="get-html-btn">Get HTML</button>
 
 <script src="jquery.min.js"></script>
 <script src="editor.md/editormd.min.js"></script>
@@ -35,13 +33,9 @@
             // markdown: "xxxx",     // dynamic set Markdown text
             path : "editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
         });
-    });
-    $(function() {
-	    var testView = editormd.markdownToHTML("test-markdown-view", {
-            // markdown : "[TOC]\n### Hello world!\n## Heading 2", // Also, you can dynamic set Markdown text
-            // htmlDecode : true,  // Enable / disable HTML tag encode.
-            // htmlDecode : "style,script,iframe",  // Note: If enabled, you should filter some dangerous HTML tags for website security.
-        });
+	$("#get-html-btn").bind('click', function() {
+                alert(testEditor.getHTML());
+        });  
     });
 </script>
 </body>
