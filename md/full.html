@@ -126,11 +126,11 @@
             
             $(function() {
                 
-                $.get('/md/test.md', function(md){
+                $.get('test.md', function(md){
                     testEditor = editormd("test-editormd", {
                         width: "90%",
                         height: 740,
-                        path : '/md/editor.md/lib/',
+                        path : 'editor.md/lib/',
                         theme : "dark",
                         previewTheme : "dark",
                         editorTheme : "pastel-on-dark",
