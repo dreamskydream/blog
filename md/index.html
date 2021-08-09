@@ -31,7 +31,7 @@
             saveHTMLToTextarea   : true,
             placeholder: "欢迎使用Markdown在线编辑器！",
             // markdown: "xxxx",     // dynamic set Markdown text
-            path : "editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
+            path : "/md/editor.md/lib/"  // Autoload modules mode, codemirror, marked... dependents libs path
         });
 	$("#get-html-btn").bind('click', function() {
                 alert(editor.getHTML());
