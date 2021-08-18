@@ -14,19 +14,6 @@
         </style>
     </head>
     <body>
-        <div id="layout">
-            <header>
-                <h1>Markdown转HTML的显示处理</h1> 
-                <p>即：非编辑情况下的HTML预览</p>
-                <p>HTML Preview(markdown to html)</p>       
-            </header>
-            <div class="btns">
-                <button onclick="location.href='./html-preview-markdown-to-html-custom-toc-container.html';">将 ToC 移到自定义容器层</button>
-            </div>
-            <div id="test-editormd-view">
-               <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>               
-            </div>
-        </div>
         <!-- <script src="../js/zepto.min.js"></script>
 		<script>		
 			var jQuery = Zepto;  // 为了避免修改flowChart.js和sequence-diagram.js的源码，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
@@ -43,10 +30,41 @@
 
         <script src="../md/editor.md/editormd.js"></script>
         <script type="text/javascript">
+            (function($)
+            {
+                $.extend(
+                {
+//        
+//          url get parameters
+//          public
+//         return array()
+//       
+                urlGet:function()
+                {
+                            var aQuery = window.location.href.split("?");//取得Get参数
+                            var aGET = new Array();
+                            if(aQuery.length > 1)
+                            {
+                                var aBuf = aQuery[1].split("&");
+                                for(var i=0, iLoop = aBuf.length; i<iLoop; i++)
+                                {
+                                    var aTmp = aBuf[i].split("=");//分离key与Value
+                                    aGET[aTmp[0]] = aTmp[1];
+                                }
+                            }
+                            return aGET;
+                        },
+                    });
+            })(jQuery);
+
+            $(function() {
+                alert($.urlGet().blog);
+            });
+
             $(function() {
                 var testEditormdView;
                 
-                $.get("./git的使用.md", function(markdown) {
+                $.get("."+$.urlGet().blog, function(markdown) {
                     
 				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
                         markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
@@ -64,13 +82,6 @@
                         flowChart       : true,  // 默认不解析
                         sequenceDiagram : true,  // 默认不解析
                     });
-                    
-                    //console.log("返回一个 jQuery 实例 =>", testEditormdView);
-                    
-                    // 获取Markdown源码
-                    //console.log(testEditormdView.getMarkdown());
-                    
-                    //alert(testEditormdView.getMarkdown());
                 });
             });
         </script>
