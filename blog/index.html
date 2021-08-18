@@ -59,9 +59,9 @@
 
             $(function() {
                 var testEditormdView;
-                var blog;
-
-                blog = "./"+$.urlGet().blog+".md";
+                var getBlog;
+                blog = decodeURIComponent($.urlGet().blog);
+                getBlog = "./"+ blog +".md";
 
                 $.get(blog, function(markdown) {
                     
