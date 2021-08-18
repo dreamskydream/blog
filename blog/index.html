@@ -14,6 +14,12 @@
         </style>
     </head>
     <body>
+        <div id="layout">  
+            <div id="test-editormd-view">
+             <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>               
+            </div>
+        </div>
+
         <!-- <script src="../js/zepto.min.js"></script>
 		<script>		
 			var jQuery = Zepto;  // 为了避免修改flowChart.js和sequence-diagram.js的源码，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
@@ -62,6 +68,8 @@
                 var getBlog;
                 blog = decodeURIComponent($.urlGet().blog);
                 getBlog = "./"+ blog +".md";
+
+alert(getBlog);
 
                 $.get(getBlog, function(markdown) {
                     
