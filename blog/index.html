@@ -63,7 +63,7 @@
                 blog = decodeURIComponent($.urlGet().blog);
                 getBlog = "./"+ blog +".md";
 
-                $.get(blog, function(markdown) {
+                $.get(getBlog, function(markdown) {
                     
 				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
                         markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
