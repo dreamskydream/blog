@@ -59,8 +59,11 @@
 
             $(function() {
                 var testEditormdView;
-                
-                $.get("./"+$.urlGet().blog+".md", function(markdown) {
+                var blog;
+
+                blog = "./"+$.urlGet().blog+".md";
+
+                $.get(blog, function(markdown) {
                     
 				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
                         markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
