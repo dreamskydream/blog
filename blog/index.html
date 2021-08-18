@@ -66,9 +66,8 @@
             $(function() {
                 var testEditormdView;
                 var getBlog;
-                blog = $.urlGet().blog
-                // blog = decodeURIComponent($.urlGet().blog);
-                getBlog = "./"+ blog +".md";
+                // blog = decodeURIComponent($.urlGet().blog);  //汉字转码，不转也行
+                getBlog = "./"+ $.urlGet().blog +".md";
 
                 $.get(getBlog, function(markdown) {
                     
