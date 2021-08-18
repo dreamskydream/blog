@@ -66,10 +66,8 @@
             $(function() {
                 var testEditormdView;
                 var getBlog;
-                blog = decodeURIComponent($.urlGet().blog);
+                // blog = decodeURIComponent($.urlGet().blog);
                 getBlog = "./"+ blog +".md";
-
-alert(getBlog);
 
                 $.get(getBlog, function(markdown) {
                     
